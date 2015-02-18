@@ -27,4 +27,4 @@ angular
         controller: 'AboutCtrl'
       .otherwise
         redirectTo: '/'
-
+  .value('physics', Physics)
