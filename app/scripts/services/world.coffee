@@ -11,7 +11,7 @@ angular.module 'orbitApp'
   .factory ['world', (physics) ->
     world = physics()
 
-    world.on "step", ->
+    world.on 'step', ->
       world.render()
 
     render

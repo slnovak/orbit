@@ -19,55 +19,26 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+    <physics-canvas width="500" height="500">
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+      <physics-body type="rectangle" body="main.box1" options="{x:450, y:10, vy:-0.3, width:5, height:5}">
+      </physics-body>
 
-            <a class="navbar-brand" href="#/">orbit</a>
-          </div>
+      <physics-body type="rectangle" body="main.box2" options="{x:250, y:210, vy:-0.3, width:5, height:5}">
+      </physics-body>
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      <physics-edge-detection min-x="0" min-y="0" max-x="500" max-y="500" restitution="0.3">
+      </physics-edge-detection>
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+      <physics-behavior name="constant-acceleration"></physics-behavior>
+      <physics-behavior name="body-impulse-response"></physics-behavior>
+      <physics-behavior name="body-collision-detection"></physics-behavior>
+      <physics-behavior name="sweep-prune"></physics-behavior>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+    </physics-canvas>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
+    <button ng-click="main.kick()">Kick</button>
+    <button ng-click="main.grow()">Grow</button>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -80,6 +51,8 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/mathjs/dist/math.min.js"></script>
+    <script src="bower_components/physicsjs/dist/physicsjs-full.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -87,6 +60,12 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/services/world.js"></script>
+        <script src="scripts/services/ticker.js"></script>
+        <script src="scripts/directives/physicscanvas.js"></script>
+        <script src="scripts/directives/physicsedgedetection.js"></script>
+        <script src="scripts/directives/physicsbehavior.js"></script>
+        <script src="scripts/directives/physicsbody.js"></script>
         <!-- endbuild -->
 </body>
 </html>

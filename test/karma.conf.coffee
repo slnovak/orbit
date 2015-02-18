@@ -23,6 +23,8 @@ module.exports = (config) ->
       'bower_components/angular-route/angular-route.js'
       'bower_components/angular-sanitize/angular-sanitize.js'
       'bower_components/angular-touch/angular-touch.js'
+      'bower_components/mathjs/dist/math.min.js'
+      'bower_components/physicsjs/dist/physicsjs-full.js'
       'bower_components/angular-mocks/angular-mocks.js'
       # endbower
       # bower:coffee

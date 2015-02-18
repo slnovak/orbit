@@ -22,7 +22,7 @@ angular.module 'orbitApp'
         parseInt(scope.maxX),
         parseInt(scope.maxY)
 
-      world.add Physics.behavior('edge-collision-detection',
+      world.add Physics.behavior 'edge-collision-detection',
         aabb: bounds
         restitution: parseFloat(scope.restitution)
   ]
