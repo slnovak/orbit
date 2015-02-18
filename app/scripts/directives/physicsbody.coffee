@@ -7,7 +7,7 @@
  # # physicsBody
 ###
 angular.module 'orbitApp'
-  .directive 'physicsBody', ['physics', 'world', ->
+  .directive 'physicsBody', ['physics', 'world', (physics, world) ->
     restrict: 'E'
     scope:
       options: '='

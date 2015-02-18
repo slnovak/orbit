@@ -7,7 +7,7 @@
  # # physicsEdgeDetection
 ###
 angular.module 'orbitApp'
-  .directive 'physicsEdgeDetection', ['physics', 'world', ->
+  .directive 'physicsEdgeDetection', ['physics', 'world', (physics, world) ->
     restrict: 'E'
     scope:
       minX: '@'

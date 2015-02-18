@@ -8,11 +8,11 @@
  # Factory in the orbitApp.
 ###
 angular.module 'orbitApp'
-  .factory ['world', (physics) ->
+  .factory 'world', ['physics', (physics) ->
     world = physics()
 
     world.on 'step', ->
       world.render()
 
-    render
+    world
   ]

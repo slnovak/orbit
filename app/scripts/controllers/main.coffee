@@ -16,6 +16,8 @@ angular.module 'orbitApp'
     
     model.kick = ->
 
+      console.log "Not working?"
+
       model.box1.applyForce(
         x:  0.1
         y: -0.2)
